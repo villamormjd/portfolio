@@ -1,0 +1,30 @@
+{% load humanize %}
+<section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
+      <div class="w-100">
+        <h2 class="mb-5">Experience</h2>
+        {% for job in jobs %}
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">{{ job.title}}</h3>
+            <div class="subheading mb-3">{{job.company}} · {{job.address}} </div>
+            <p>{% for description in job.desc_format%}
+                {{description}}.<br>
+              {% endfor %}
+            </p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">{{job.year}} -
+            {% if job.resign_date%}
+              {{job.resign_year}}
+            {% else %}
+              Present
+              {% endif %}<br> <strong>{{job.diff_month}} months</strong></span>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+
+    </section>
+
+    <hr class="m-0">
