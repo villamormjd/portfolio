@@ -1,3 +1,12 @@
-.sideNav{
-    background-color:red;
+
+body{
+    background-color: #def2f1;
+}
+
+#sideNav{
+    background-color: #2b7a78;
+}
+
+#surname{
+    color: #feffff;
 }

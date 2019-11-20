@@ -14,4 +14,4 @@ class Education(models.Model):
 
 
     def year(self):
-        return self.start_date.strftime("%b %Y") + "-" + self.end_date.strftime("%b %Y")
+        return self.start_date.strftime("%Y") + "-" + self.end_date.strftime("%Y")

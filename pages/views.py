@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from user_profile.models import UserProfile
 from jobs.models import Jobs
 from education.models import Education
+from .skills import skills
 
 
 def index(request):
@@ -12,6 +13,7 @@ def index(request):
     context = {
         "users": profile[0],
         "jobs": jobs,
-        "schools": education
+        "schools": education,
+        "skills": skills
     }
     return render(request, 'pages/index.html', context)
