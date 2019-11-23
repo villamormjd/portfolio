@@ -1,22 +1,35 @@
 <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
-      <div class="w-100">
+    <div class="w-100">
         <h2 class="mb-5">Education</h2>
         {% for school in schools %}
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">{{school.school}}</h3>
-            <div class="subheading mb-3">
-              {% if school.course %}
-              {{school.course}} <br>
-              {%endif%}
-              {{school.address}}</div>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">{{school.year}}</span>
-          </div>
+            <div class="resume-content">
+                <h3 class="mb-0">{{school.school}} </h3>
+                <div class="subheading mb-3">
+                    {% if school.course %}
+                    {{school.course}} ·
+                    {%endif%}
+                    {{school.address}}
+                </div>
+                <ul class="fa-ul mb-0">
+                    {% for award in school.award%}
+                    <li>
+                        <i class="fa-li fa fa-award"></i>
+                        {{award}}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="resume-date text-md-right">
+                {% if school.school == 'Udemy'%}
+
+                {% else %}
+                    <span class="text-primary">{{school.year}}</span>
+                {% endif %}
+            </div>
         </div>
         {% endfor %}
-      </div>
-    </section>
+    </div>
+</section>
 
-    <hr class="m-0">
+<hr class="m-0">
