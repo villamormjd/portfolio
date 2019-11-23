@@ -11,12 +11,12 @@ def index(request):
     profile = UserProfile.objects.all()
     jobs = Jobs.objects.order_by('-hire_date')
     education = Education.objects.order_by('-start_date')
-    current_url = resolve(request.path_info).url_name
+
     context = {
         "users": profile[0],
         "jobs": jobs,
         "schools": education,
         "skills": skills,
-        "url": request.build_absolute_uri
+
     }
     return render(request, 'pages/index.html', context)
